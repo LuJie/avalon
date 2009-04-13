@@ -14,14 +14,14 @@
     <Master>
         <ServerIP>127.0.0.1</ServerIP>
         <Port>15550</Port>
-        <Proof>puggy12</Proof>
+        <Proof></Proof>
     </Master>
     
     <!-- Database Settings -->
     <Database>
       <servername>COMPUTER\SQLEXPRESS</servername>
       <username>sa</username>
-      <password>puggy12</password>
+      <password></password>
       <database>LuniaDB</database>  
     </Database>
 
