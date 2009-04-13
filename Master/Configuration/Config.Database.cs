@@ -7,16 +7,17 @@ namespace Avalon.Configuration
 	public class DatabaseSettings
 	{
         // Default Settings
-        public string servername = "GAMENAO";
-        public string username = "sa";
-        public string password = "puggy12";
-        public string database = "LuniaDB";
+        public string servername = "66.183.75.152";
+        public string username = "lunia";
+        public string password = "forsaken";
+        public string database = "lunia";
+        public string provider = "MySQLProv";
 
         public string ConnectionString
         {
             get
             {
-                return String.Format("SERVER={0};User ID={1};Password={2};Initial Catalog={3};MultipleActiveResultSets=true;Asynchronous Processing=true;", servername, username, password, database);
+                return String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false", servername, username, password, database);
             }
         }
 	}

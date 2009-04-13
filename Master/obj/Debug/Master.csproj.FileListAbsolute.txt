@@ -1,6 +1,0 @@
-C:\avalon\Master\bin\Debug\config.xml
-C:\avalon\Master\bin\Debug\Master.exe
-C:\avalon\Master\bin\Debug\Master.pdb
-C:\avalon\Master\obj\Debug\ResolveAssemblyReference.cache
-C:\avalon\Master\obj\Debug\Master.exe
-C:\avalon\Master\obj\Debug\Master.pdb

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Net;
-using System.Data.SqlClient;
 using Avalon.Network.Packets;
 using Avalon.Utility.Conversions;
 using Avalon.Utility.Debugging;
 using Avalon.Network;
+using MySql.Data.MySqlClient;
 
 namespace Avalon.Managers.Database
 {
@@ -18,7 +18,7 @@ namespace Avalon.Managers.Database
             loginpacket.Username = Username;
 
             string salt;
-            SqlDataReader sdr;
+            MySqlDataReader sdr;
 
             sdr = Database.Query("SELECT salt FROM account WHERE username='" + Username + "'");
 

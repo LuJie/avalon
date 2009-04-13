@@ -1,12 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Data;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Data.SqlClient;
 using Avalon.Network.Packets;
 using Avalon.Structures;
+using MySql.Data.MySqlClient;
 
 namespace Avalon.Managers.Database
 {
@@ -16,7 +15,7 @@ namespace Avalon.Managers.Database
         {
             List<Mobile> Characters = new List<Mobile>();
 
-            SqlDataReader query = Database.Query("select * from character where aid = " + AID + "");
+            MySqlDataReader query = Database.Query("select * from character where aid = " + AID + "");
             if (!query.HasRows)
                 return null;
 
@@ -36,7 +35,7 @@ namespace Avalon.Managers.Database
 
                 int CID = (int)query["id"];
 
-                SqlDataReader sqlr = Database.Query("select * from equip where cid = " + CID);
+                MySqlDataReader sqlr = Database.Query("select * from equip where cid = " + CID);
 
                 if (sqlr.HasRows)
                 {
@@ -62,7 +61,7 @@ namespace Avalon.Managers.Database
 
             if (pattern.Match(Name).Success)
             {
-                SqlDataReader sql = Database.Query("SELECT * FROM character WHERE name = '" + Name + "'");
+                MySqlDataReader sql = Database.Query("SELECT * FROM character WHERE name = '" + Name + "'");
                 if (sql.HasRows)
                 {
                     Database.Query("INSERT INTO character (aid, name, class) VALUES (" + AID + ", '" + Name + "', " + Class + ")");
@@ -83,7 +82,7 @@ namespace Avalon.Managers.Database
 
         public static SMSG_CHARACTER_DELETE CharacterDelete(String Name, int AID)
         {
-            SqlDataReader sdr = Database.Query("DELETE FROM character WHERE name = '" + Name + "' AND aid = " + AID);
+            MySqlDataReader sdr = Database.Query("DELETE FROM character WHERE name = '" + Name + "' AND aid = " + AID);
             
             if(sdr.RecordsAffected > 0)
             {
