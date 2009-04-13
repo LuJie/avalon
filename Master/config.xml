@@ -13,7 +13,7 @@
     <Database>
       <servername>COMPUTER\SQLEXPRESS</servername>
       <username>sa</username>
-      <password>puggy12</password>
+      <password></password>
       <database>LuniaDB</database>  
     </Database>
 

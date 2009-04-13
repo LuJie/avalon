@@ -64,6 +64,7 @@
     <Compile Include="Network\Client\Client.General.cs" />
     <Compile Include="Network\Client\Client.Channel.cs" />
     <Compile Include="Network\Client\Client.World.cs" />
+    <Compile Include="Network\Cryptography.cs" />
     <Compile Include="Network\Internal\CMSG_CONNECT_MASTER.cs" />
     <Compile Include="Network\Internal\SMSG_SEND_SESSION.cs" />
     <Compile Include="Network\PacketHandler.cs" />
