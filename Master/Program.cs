@@ -19,7 +19,7 @@ namespace Avalon
             AvalonCfg = Config.Load("config.xml");
             AvalonSrv = new SocketServer(AvalonCfg.Server.IPAddress, AvalonCfg.Server.ListenPort);
            
-            Database.Initialize();
+            //Database.Initialize();
             AvalonSrv.Listen();
 
             while (true)
