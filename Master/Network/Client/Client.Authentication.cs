@@ -30,7 +30,7 @@ namespace Avalon.Network.Client
             Username = cpkt.Username;
             Password = cpkt.Password;
 
-            Regex countPattern = new Regex("NHN_P_LOGIN=(.+);");
+            Regex countPattern = new Regex("NHN_P_LOGIN=([a-zA-Z0-9_]+)");
             Match m1 = countPattern.Match(Password);
             Password = m1.Groups[1].ToString();
 

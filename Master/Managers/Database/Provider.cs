@@ -42,8 +42,16 @@ namespace Avalon.Managers.Database
 
                 sdr.Read();
 
-                if (!sdr.HasRows) return sdr;
-                else return sdr;
+                if (!sdr.HasRows)
+                {
+                    sdr.Close();
+                    return sdr;
+                }
+                else
+                {
+                    sdr.Close();
+                    return sdr;
+                }
               
             }
             catch (Exception ex)
