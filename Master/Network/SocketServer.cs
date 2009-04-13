@@ -164,7 +164,9 @@ namespace Avalon.Network
                 {
                     byte[] newData = new byte[numRecvBytes];
                     Buffer.BlockCopy(m_bRecvBuffer, 0, newData, 0, numRecvBytes);
-                    m_bPacketStream = newData;
+                    
+                    // decrypt incoming packet
+                    m_bPacketStream = Cryptography.Decrypt(newData);
 
                     // process packets
                     ProcessPacket(m_bPacketStream, clientState);
@@ -239,7 +241,9 @@ namespace Avalon.Network
             {
                 byte[] packet = PacketQueue.Dequeue();
                 Console.WriteLine(Utility.Conversions.Misc.HexBytes(packet));
-                sockstate.Client.Socket.Send(packet);
+
+                // encrypt outgoing packet
+                sockstate.Client.Socket.Send(Cryptography.Encrypt(packet));
             }
         }
 

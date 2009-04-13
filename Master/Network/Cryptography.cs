@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Master.Network
+namespace Avalon.Network
 {
     public static class Cryptography
     {
